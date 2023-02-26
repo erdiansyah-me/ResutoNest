@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ResutoNest</string>
+    <string name="title_favorite">favorite</string>
+    <string name="_0_0">0.0</string>
+    <string name="add_or_remove_favorite">add or remove favorite</string>
+    <string name="kota">kota</string>
+    <string name="nama_restoran">nama restoran</string>
+    <string name="popular_menu">Popular Menu</string>
+    <string name="back_to_previous_page">back to previous page</string>
+    <string name="greet_msg">Halo! Mau Makan Dimana Hari Ini?</string>
+    <string name="navigate_to_favorite_page">navigate to favorite page</string>
+    <string name="error_msg">Oops! Something Went Wrong!</string>
+    <string name="rating_star">rating star</string>
+    <string name="resto_iamge">resto_iamge</string>
+    <string name="ic_location">ic_location</string>
+    <string name="ic_rating">ic_rating</string>
+    <string name="add_to_favorite">Ditambahkan ke Favorite</string>
+    <string name="delete_from_favorite">Dihapus dari Favorite</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favorit_kosong">Favorit kosong</string>
+    <string name="favorite">Favorite</string>
+    <string name="resto_image">resto image</string>
+    <string name="nama_restoran">nama restoran</string>
+    <string name="kota">kota</string>
+    <string name="_0_0">0.0</string>
+    <string name="rating_star">rating star</string>
+</resources>
