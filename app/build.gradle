@@ -22,7 +22,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -30,6 +30,8 @@ android {
     buildTypes.each {
         it.buildConfigField "String", "BASE_URL_PICTURE","\"https://restaurant-api.dicoding.dev/images/medium/\""
         it.buildConfigField "String", "BASE_URL_PICTURE_SMALL","\"https://restaurant-api.dicoding.dev/images/small/\""
+        it.minifyEnabled true
+        it.proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
 
     compileOptions {

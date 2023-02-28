@@ -19,13 +19,19 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL_DICODING_RESTAURANT", "\"https://restaurant-api.dicoding.dev/\""
+            //minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
-        debug {
-            buildConfigField "String", "BASE_URL_DICODING_RESTAURANT", "\"https://restaurant-api.dicoding.dev/\""
-        }
+    }
+
+    buildTypes.each {
+        it.buildConfigField "String", "BASE_URL_DICODING_RESTAURANT", "\"https://restaurant-api.dicoding.dev/\""
+        it.buildConfigField "String", "PASSBASE", "\"StillGreilInMe\""
+        it.buildConfigField "String", "BASE_URL_SHA256_1", "\"sha256/ButmfvV0U7eP+pKDOfIonMQrtImx9bE6k2ZFyVz5dxw=\""
+        it.buildConfigField "String", "BASE_URL_SHA256_2", "\"sha256/jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0=\""
+        it.buildConfigField "String", "BASE_URL_SHA256_3", "\"sha256/C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=\""
+        it.buildConfigField "String", "BASE_URL_PATTERN", "\"restaurant-api.dicoding.dev\""
     }
 
     compileOptions {
