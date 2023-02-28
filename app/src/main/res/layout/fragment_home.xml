@@ -58,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:layout_marginTop="40dp"
+        tools:listitem="@layout/home_item_list"
         app:layout_constraintLeft_toLeftOf="@id/container_list"
         app:layout_constraintRight_toRightOf="@id/container_list"
         app:layout_constraintTop_toTopOf="@id/container_list" />

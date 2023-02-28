@@ -19,7 +19,6 @@ import javax.inject.Inject
 
 class FavoriteFragment : Fragment() {
     private var _binding: FragmentFavoriteBinding? = null
-    private val binding get() = _binding!!
 
 
     @Inject
@@ -41,31 +40,37 @@ class FavoriteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         val listAdapter = FavoriteListAdapter {
             val toDetailFragment = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment()
             toDetailFragment.id = it
             findNavController().navigate(toDetailFragment)
         }
-        binding.rvFavorite.apply {
+        _binding?.rvFavorite?.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = listAdapter
         }
         lifecycleScope.launch {
             favoriteViewModel.favorite.flowWithLifecycle(lifecycle).collect {
                 if (it.isNotEmpty()) {
-                    binding.tvEmpty.visibility = View.GONE
+                    _binding?.tvEmpty?.visibility = View.GONE
                     listAdapter.setData(it)
                 } else {
-                    binding.tvEmpty.visibility = View.VISIBLE
+                    _binding?.tvEmpty?.visibility = View.VISIBLE
                     listAdapter.setData(it)
                 }
             }
         }
-        binding.icBack.setOnClickListener {
+        _binding?.icBack?.setOnClickListener {
             findNavController().popBackStack()
         }
-        return binding.root
+        return _binding?.root
+    }
+
+    override fun onDestroyView() {
+        _binding?.rvFavorite?.adapter = null
+        _binding = null
+        super.onDestroyView()
     }
 }
