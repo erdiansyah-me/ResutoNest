@@ -1,5 +1,6 @@
 package com.erdiansyah.favorite
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ class FavoriteListAdapter (private val onItemClick: (String) -> Unit):RecyclerVi
         private var listRestaurantItem = ArrayList<Restaurant>()
 
 
+        @SuppressLint("NotifyDataSetChanged")
         fun setData(newListData: List<Restaurant>?) {
             if (newListData == null) return
             listRestaurantItem.clear()
